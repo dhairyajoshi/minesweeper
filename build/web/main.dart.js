@@ -17003,11 +17003,12 @@ lp:function lp(){},
 kC:function kC(a,b){this.a=a
 this.b=b},
 i8:function i8(a,b,c,d,e,f,g,h,i,j,k){var _=this
-_.ay=a
-_.ch=b
-_.CW=c
-_.cx=!1
-_.cy=d
+_.ay=0
+_.ch=a
+_.CW=b
+_.cx=c
+_.cy=!1
+_.db=d
 _.e=e
 _.f=f
 _.r=g
@@ -55738,39 +55739,41 @@ s.wz(0,new A.Qx(s),t.k3)
 s.wz(0,new A.Qy(s),t.eh)
 s.wz(0,new A.Qz(s),t.hQ)}}
 A.Qx.prototype={
-$2(a,b){var s,r,q,p,o,n,m,l,k=this.a
-k.cx=!1
+$2(a,b){var s,r,q,p,o,n,m,l,k,j=this.a
+j.cy=!1
 s=J.a6D(10,t.E4)
 for(r=t.N,q=0;q<10;++q)s[q]=A.aU(10,"0",!1,r)
 p=J.a6D(10,t.DP)
 for(r=t.y,q=0;q<10;++q)p[q]=A.aU(10,!1,!1,r)
-k.ch=p
-k.cy.I(0)
+j.CW=p
+j.db.I(0)
 for(r=t.s,o=0;o<10;++o)for(n=0;n<10;++n){m=s[o]
-l=A.a(["M"," "," "],r)
+l=A.a(["M"," "," "," "],r)
 B.b.Im(l)
-J.dA(m,n,B.b.gG(l))}k.ay=s
-r=k.cx
-k=k.ch
-if(!b.d)b.a.$1(new A.jg(10,10,s,k,r))},
+k=B.b.gG(l)
+J.dA(m,n,k)
+if(k==="M")++j.ay}j.ch=s
+r=j.cy
+j=j.CW
+if(!b.d)b.a.$1(new A.jg(10,10,s,j,r))},
 $S:339}
 A.Qy.prototype={
 $2(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e=a.a,d=a.b,c=this.a
-if(J.f(J.aN(c.ay[e],d),"M")){if(!b.d)b.a.$1(new A.kW())
-for(s=0;s<10;++s)for(r=0;r<10;++r)J.dA(c.ch[s],r,!0)
-c.cx=!0
-q=c.ay
-c=c.ch
+if(J.f(J.aN(c.ch[e],d),"M")){if(!b.d)b.a.$1(new A.kW())
+for(s=0;s<10;++s)for(r=0;r<10;++r)J.dA(c.CW[s],r,!0)
+c.cy=!0
+q=c.ch
+c=c.CW
 if(!b.d)b.a.$1(new A.jg(10,10,q,c,!0))
-return}if(J.aN(c.ch[e],d)){q=c.cx
-p=c.ay
-c=c.ch
+return}if(J.aN(c.CW[e],d)){q=c.cy
+p=c.ch
+c=c.CW
 if(!b.d)b.a.$1(new A.jg(10,10,p,c,q))
-return}q=c.cy
+return}q=c.db
 p=t.t
 q.cM(0,A.a([e,d],p))
-J.dA(c.ch[e],d,!0)
-for(o=c.CW,n=q.$ti.c;!q.gL(q);){m=q.b
+J.dA(c.CW[e],d,!0)
+for(o=c.cx,n=q.$ti.c;!q.gL(q);){m=q.b
 if(m===q.c)A.V(A.bq())
 m=q.a[m]
 l=J.aN(m==null?n.a(m):m,0)
@@ -55782,25 +55785,25 @@ q.kX()
 for(j=0,i=0;i<8;++i){h=o[i]
 g=l+h[0]
 f=k+h[1]
-if(g>=0&&g<10&&f>=0&&f<10)j=J.f(J.aN(c.ay[g],f),"M")?j+1:j}if(j>0)J.dA(c.ay[l],k,""+j)
+if(g>=0&&g<10&&f>=0&&f<10)j=J.f(J.aN(c.ch[g],f),"M")?j+1:j}if(j>0)J.dA(c.ch[l],k,""+j)
 else for(i=0;i<8;++i){h=o[i]
 g=l+h[0]
 f=k+h[1]
-if(g>=0&&g<10&&f>=0&&f<10&&J.f(J.aN(c.ay[g],f)," ")&&!J.aN(c.ch[g],f)){q.cM(0,A.a([g,f],p))
-J.dA(c.ch[g],f,!0)}}}if(!b.d)b.a.$1(new A.kW())
-q=c.cx
-p=c.ay
-c=c.ch
+if(g>=0&&g<10&&f>=0&&f<10&&J.f(J.aN(c.ch[g],f)," ")&&!J.aN(c.CW[g],f)){q.cM(0,A.a([g,f],p))
+J.dA(c.CW[g],f,!0)}}}if(!b.d)b.a.$1(new A.kW())
+q=c.cy
+p=c.ch
+c=c.CW
 if(!b.d)b.a.$1(new A.jg(10,10,p,c,q))},
 $S:340}
 A.Qz.prototype={
 $2(a,b){var s=this.a
-s.cx=!1
+s.cy=!1
 s.A(0,new A.ju())},
 $S:341}
 A.By.prototype={
 O(a){var s=null
-return new A.rG(new A.AE(s),"Flutter Demo",A.abe(s,B.f4,s),s)}}
+return new A.rG(new A.AE(s),"Minesweeper",A.abe(s,B.f4,s),s)}}
 A.AE.prototype={
 O(a){var s=null,r=new A.pR(new A.QC(),s,s,s,t.nX)
 return new A.tU(new A.pT(r,new A.QD(),r,s,t.C5),s)}}

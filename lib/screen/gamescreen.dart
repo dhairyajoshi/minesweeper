@@ -138,11 +138,11 @@ class GridRow extends StatelessWidget {
                           : Color.fromARGB(255, 136, 244, 140)
                       : Colors.white,
                 ),
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                // padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 child: state.revealed[rowno][index]
                     ? state.grid[rowno][index] == 'M'
-                        ? Icon(Icons.circle)
-                        : Text(state.grid[rowno][index])
+                        ? Center(child: Icon(Icons.circle))
+                        : Center(child: Text(state.grid[rowno][index]))
                     : Text(''),
               ),
             );

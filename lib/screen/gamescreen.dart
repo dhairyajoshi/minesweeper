@@ -8,6 +8,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:minesweeper/bloc/appbloc.dart';
 import 'package:minesweeper/bloc/gamebloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GameScreen extends StatelessWidget {
   const GameScreen({super.key});
@@ -65,6 +66,7 @@ class GameScreen extends StatelessWidget {
                         // color: Colors.black,
                         child: state.gameover
                             ? Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Center(
                                     child: Text(
@@ -78,10 +80,36 @@ class GameScreen extends StatelessWidget {
                                         BlocProvider.of<GameBloc>(context)
                                             .add(ResetGameEvent());
                                       },
-                                      child: Text('Reset'))
+                                      child: Text('Reset')),
+                                  
+                                  InkWell(
+                                    child: Text(
+                                        'https://github.com/dhairyajoshi/minesweeper'),
+                                    onTap: () async {
+                                      await launchUrl(Uri.parse(
+                                          'https://github.com/dhairyajoshi/minesweeper'));
+                                    },
+                                  ),
+                                  
                                 ],
                               )
-                            : SizedBox.shrink(),
+                            : Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox.shrink(),
+                                  InkWell(
+                                    child: Text(
+                                        'https://github.com/dhairyajoshi/minesweeper'),
+                                    onTap: () async {
+                                      await launchUrl(Uri.parse(
+                                          'https://github.com/dhairyajoshi/minesweeper'));
+                                    },
+                                  ),
+                                  SizedBox(
+                                    height: 15,
+                                  )
+                                ],
+                              ),
                       ),
                     )
                   ],

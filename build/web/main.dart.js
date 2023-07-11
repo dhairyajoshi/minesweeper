@@ -16980,7 +16980,7 @@ Mz:function Mz(a){this.a=a},
 cK:function cK(){},
 hV:function hV(){},
 aht(){var s,r,q,p,o,n,m=A.a([],t.eY),l=A.a([],t.g8),k=t.t
-k=A.a([A.a([0,1],k),A.a([0,-1],k),A.a([1,0],k),A.a([-1,0],k)],t.uw)
+k=A.a([A.a([0,1],k),A.a([0,-1],k),A.a([1,0],k),A.a([-1,0],k),A.a([1,1],k),A.a([1,-1],k),A.a([-1,1],k),A.a([-1,-1],k)],t.uw)
 s=A.ig(null,t.eH)
 r=A.Z5(null,!1,t.ps)
 q=A.a([],t.eU)
@@ -55779,11 +55779,11 @@ if(m===q.c)A.V(A.bq())
 m=q.a[m]
 k=J.aN(m==null?n.a(m):m,1)
 q.kX()
-for(j=0,i=0;i<4;++i){h=o[i]
+for(j=0,i=0;i<8;++i){h=o[i]
 g=l+h[0]
 f=k+h[1]
 if(g>=0&&g<10&&f>=0&&f<10)j=J.f(J.aN(c.ay[g],f),"M")?j+1:j}if(j>0)J.dA(c.ay[l],k,""+j)
-else for(i=0;i<4;++i){h=o[i]
+else for(i=0;i<8;++i){h=o[i]
 g=l+h[0]
 f=k+h[1]
 if(g>=0&&g<10&&f>=0&&f<10&&J.f(J.aN(c.ay[g],f)," ")&&!J.aN(c.ch[g],f)){q.cM(0,A.a([g,f],p))

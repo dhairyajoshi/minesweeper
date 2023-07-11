@@ -42,7 +42,11 @@ class GameBloc extends Bloc<AppEvent, AppState> {
     [0, 1],
     [0, -1],
     [1, 0],
-    [-1, 0]
+    [-1, 0],
+    [1, 1],
+    [1, -1],
+    [-1, 1],
+    [-1, -1],
   ];
   bool gameover = false;
   final q = Queue<List<int>>();

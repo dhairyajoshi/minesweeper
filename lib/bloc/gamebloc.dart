@@ -69,7 +69,10 @@ class GameBloc extends Bloc<AppEvent, AppState> {
 
         if (grid[i][j] == 'M') {
           emit(GameLoadingState());
-          revealed[i][j] = true;
+          for (int a = 0; a < rows; a++) {
+            for (int b = 0; b < cols; b++) revealed[a][b] = true;
+          }
+
           gameover = true;
           emit(GameLoadedState(gameover, grid, revealed, rows, cols));
           return;

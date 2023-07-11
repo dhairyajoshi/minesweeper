@@ -35,7 +35,7 @@ class CellClickEvent extends AppEvent {
 }
 
 class GameBloc extends Bloc<AppEvent, AppState> {
-  int rows = 10, cols = 10;
+  int rows = 10, cols = 10, bombs=0;
   List<List<String>> grid = [];
   List<List<bool>> revealed = [];
   List<List<int>> dirs = [
@@ -57,9 +57,12 @@ class GameBloc extends Bloc<AppEvent, AppState> {
         var tgrid = List.generate(rows, (_) => List.filled(cols, '0'));
         revealed = List.generate(rows, (_) => List.filled(cols, false));
         q.clear();
+        String tem;
         for (int i = 0; i < rows; i++) {
           for (int j = 0; j < cols; j++) {
-            tgrid[i][j] = (['M', ' ', ' ']..shuffle()).first;
+            tgrid[i][j] = tem = (['M', ' ', ' ', ' ']..shuffle()).first;
+
+            if(tem=='M') bombs++;
           }
         }
         grid = tgrid;
@@ -74,7 +77,9 @@ class GameBloc extends Bloc<AppEvent, AppState> {
         if (grid[i][j] == 'M') {
           emit(GameLoadingState());
           for (int a = 0; a < rows; a++) {
-            for (int b = 0; b < cols; b++) revealed[a][b] = true;
+            for (int b = 0; b < cols; b++) {
+              revealed[a][b] = true;
+            }
           }
 
           gameover = true;
